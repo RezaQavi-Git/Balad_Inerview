@@ -9,12 +9,10 @@ def createConnection(path):
     connection = None
     try:
         connection = sqlite3.connect(path)
-        print("Connection to SQLite DB successful")
     except Error as e:
         print(f"The error '{e}' occurred")
 
     return connection
-
 
 def createTable(conn, dbName):
     conn.execute('''CREATE TABLE IF NOT EXISTS {}
@@ -61,7 +59,7 @@ def dumpDB(conn, dbName, path):
     cur = conn.cursor()
     cur.execute("select * from {}".format(dbName))
     filePath = path[:path.rfind('/')]
-    fileName = path[path.rfind('/'):]
+    # fileName = path[path.rfind('/'):]
     os.makedirs(filePath) 
     with open("{}.csv".format(path), "w") as csv_file:
         csv_writer = csv.writer(csv_file, delimiter=",")
@@ -73,10 +71,11 @@ def dumpDB(conn, dbName, path):
 def loadDB(conn, path, dbName):
     cur = conn.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS {} (key, value);".format(dbName)) # use your column names here
-    with open('{}.csv'.format(path),'r') as f:
-        dr = csv.DictReader(f)
+    with open('{}.csv'.format(path),'r') as file:
+        dr = csv.DictReader(file)
         to_db = [(i['key'], i['value']) for i in dr]
     cur.executemany("INSERT INTO {} (key, value) VALUES (?, ?);".format(dbName), to_db)
     conn.commit()
-    f.close()
+    file.close()
+
     return
