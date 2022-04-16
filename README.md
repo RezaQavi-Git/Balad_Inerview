@@ -2,8 +2,9 @@
 
 ## Description
 This is a simple project to set, delete, dump and load data in memory. Use sqlite3 database to store data.
-
+*** in project say we have default database with name "default*, but we in this case can't use this name because of security and I use "default_db" instead ***
 ## Commands
+```
 - set key value (set and store a data in database)
 - get key (return value of key)
 - del key (delete record with key)
@@ -13,7 +14,7 @@ This is a simple project to set, delete, dump and load data in memory. Use sqlit
 - dump db_name path (store a database's data in csv file in path location)
 - load path db_name (restore data from csv file in path location to new database with name = db_name)
 - exit (exit from program)
-
+```
 ### About me
-ReZa QaVi, BS of University of Tehran
-email : rezaqavi1379@gmail.com
+- ReZa QaVi, BS of University of Tehran
+- email : rezaqavi1379@gmail.com
