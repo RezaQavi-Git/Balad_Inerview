@@ -1,10 +1,9 @@
 # In-Memory Key-Value Database
 
 ## Description
-This is a simple project to set, delete, dump and load data in memory. Use sqlite3 database to store data.
-*** in project say we have default database with name "default*, but we in this case can't use this name because of security and I use "default_db" instead ***
+This is a simple project to set, delete, dump and load data in memory. It uses a sqlite3 database to store data. Note that in the project, we have a default database with the name "default", but for security reasons, I use "default_db" instead.
+
 ## Commands
-```
 - set key value (set and store a data in database)
     - example : set city_tehran_lat 35.715298
 - get key (return value of key)
@@ -23,8 +22,12 @@ This is a simple project to set, delete, dump and load data in memory. Use sqlit
     - example : load ./dumps/default_bk default_bk
 - exit (exit from program)
     - example : exit
-```
-### About me
+
+This project is a great example of using a sqlite3 database to store data and implementing key-value pair functionalities.
+
+### About Me
 - ReZa QaVi, BS of University of Tehran
-- email : rezaqavi1379@gmail.com
-- github link : (https://github.com/RezaQavi-git/Balad_Inerview)
+- Email: rezaqavi1379@gmail.com
+- GitHub link: https://github.com/RezaQavi-git/
+
+
